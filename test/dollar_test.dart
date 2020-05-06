@@ -6,13 +6,14 @@ void main() {
   test('should multiply', () {
     Dollar five = Dollar(5);
     var product = five.times(2);
-    expect(10, product.amount);
+    expect(true, Dollar(10).equals(product));
     product = five.times(3);
-    expect(15, product.amount);
+    expect(true, Dollar(15).equals(product));
   });
 
   test('equality', () {
     expect(true, Dollar(5).equals(Dollar(5)));
+    expect(false, Dollar(6).equals(Dollar(5)));
   });
 
 }
