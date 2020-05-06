@@ -11,4 +11,8 @@ void main() {
     expect(15, product.amount);
   });
 
+  test('equality', () {
+    expect(true, Dollar(5).equals(Dollar(5)));
+  });
+
 }
