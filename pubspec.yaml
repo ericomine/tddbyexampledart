@@ -1,0 +1,11 @@
+name: tddbyexample_dart
+version: 0.1.0
+
+environment:
+  sdk: '>=2.0.0'
+
+dependencies:
+
+devdependencies:
+  test: ^1.0.0
+  mockito: ^4.1.0
