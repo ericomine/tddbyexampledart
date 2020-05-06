@@ -1,3 +1,4 @@
+import 'package:tddbyexample_dart/dollar.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -5,7 +6,7 @@ void main() {
   test('should multiply', () {
     Dollar five = Dollar(5);
     five.times(2);
-    expect(10, five.ammount);
+    expect(10, five.amount);
   });
 
 }
