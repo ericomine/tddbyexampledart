@@ -5,8 +5,10 @@ void main() {
 
   test('should multiply', () {
     Dollar five = Dollar(5);
-    five.times(2);
-    expect(10, five.amount);
+    var product = five.times(2);
+    expect(10, product.amount);
+    product = five.times(3);
+    expect(15, product.amount);
   });
 
 }
