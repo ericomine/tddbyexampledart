@@ -6,6 +6,6 @@ environment:
 
 dependencies:
 
-devdependencies:
+dev_dependencies:
   test: ^1.0.0
   mockito: ^4.1.0
