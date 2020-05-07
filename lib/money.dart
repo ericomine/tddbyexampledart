@@ -19,7 +19,7 @@ class Money extends Expression {
   }
 
   Money reduce(Bank bank, String to) {
-    num rate = currency == "CHF" && to == "USD" ? 2 : 1;    
+    num rate = bank.rate(currency, to);
     return Money(amount / rate, to);
   }  
 
