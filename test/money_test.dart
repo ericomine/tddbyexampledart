@@ -1,6 +1,7 @@
 import 'package:tddbyexample_dart/bank.dart';
 import 'package:tddbyexample_dart/expression.dart';
 import 'package:tddbyexample_dart/money.dart';
+import 'package:tddbyexample_dart/sum.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -62,6 +63,15 @@ void main() {
     // reduced = sum.reduce("USD", bank);
     Money reduced = bank.reduce(sum, "USD");
     
-    expect(Money.dollar(10), reduced);
+    expect(true, Money.dollar(10).equals(reduced));
+  });
+
+  test("plus should return sum", () {
+    var five = Money.dollar(5);
+    Expression result = five.plus(five);
+    Sum sum = result as Sum;
+
+    expect(five, equals(sum.augend));
+    expect(five, equals(sum.addend));
   });
 }

@@ -1,4 +1,5 @@
 import 'package:tddbyexample_dart/expression.dart';
+import 'package:tddbyexample_dart/sum.dart';
 
 class Money implements Expression {
   final amount;
@@ -21,7 +22,7 @@ class Money implements Expression {
   }
 
   Expression plus(Money addend) {
-    return Money(amount + addend.amount, currency);
+    return Sum(this, addend);
   }
 
   static Money dollar(int amount) {

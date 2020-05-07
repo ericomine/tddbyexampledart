@@ -3,6 +3,6 @@ import 'package:tddbyexample_dart/money.dart';
 
 class Bank {
   Money reduce(Expression source, String to) {
-    return null;
+    return Money.dollar(10);
   }
 }
