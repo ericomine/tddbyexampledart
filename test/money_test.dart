@@ -56,7 +56,7 @@ void main() {
     expect(true, result.equals(Money.franc(10)));
   });
 
-  test("should add different currencies", () {
+  test("should add same currency", () {
     var five = Money.dollar(5);
     Expression sum = five.plus(five);
     Bank bank = Bank();
@@ -66,7 +66,6 @@ void main() {
     // expression, as would be if we wrote:
     // reduced = sum.reduce("USD", bank);
     Money reduced = bank.reduce(sum, "USD");
-    
     expect(true, Money.dollar(10).equals(reduced));
   });
 
@@ -87,15 +86,27 @@ void main() {
     expect(true, result.equals(Money.dollar(7)));
   });
 
+  test("money should reduce to convert in between currencies", () {
+    Money aFranc = Money.franc(2);
+    
+    Bank bank = Bank()
+      ..addRate("CHF", "USD", 2);
+    Money result = aFranc.reduce(bank, "USD");
+
+    expect(true, result.equals(Money.dollar(1)));
+  });
+
   test("sum should accept dollar+franc", () {
     Money aDollar = Money.dollar(1);
-    Money aFranc = Money.franc(1);
+    Money aFranc = Money.franc(2);
     
     Bank bank = Bank()
       ..addRate("CHF", "USD", 2);
 
     Expression expr = aDollar.plus(aFranc);
     Money result = bank.reduce(expr, "USD");
-    expect(result, Money.dollar(3));
+
+    print(result);
+    expect(true, result.equals(Money.dollar(2)));
   });
 }

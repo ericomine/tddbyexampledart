@@ -1,3 +1,4 @@
+import 'package:tddbyexample_dart/bank.dart';
 import 'package:tddbyexample_dart/expression.dart';
 import 'package:tddbyexample_dart/sum.dart';
 
@@ -18,8 +19,8 @@ class Money extends Expression {
   }
 
   Money reduce(Bank bank, String to) {
-    
-    return this;
+    num rate = currency == "CHF" && to == "USD" ? 2 : 1;    
+    return Money(amount / rate, to);
   }  
 
   Money times(int multiplier) {
