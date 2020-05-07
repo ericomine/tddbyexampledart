@@ -1,3 +1,5 @@
+import 'package:tddbyexample_dart/bank.dart';
+import 'package:tddbyexample_dart/expression.dart';
 import 'package:tddbyexample_dart/money.dart';
 import 'package:test/test.dart';
 
@@ -47,5 +49,19 @@ void main() {
       .equals(Money.franc(5)
       .plus(Money.franc(5)))
       );
+  });
+
+  test("should add different currencies", () {
+    var five = Money.dollar(5);
+    Expression sum = five.plus(five);
+    Bank bank = Bank();
+
+    // With this we are saying that we want the bank
+    // to be responsible for the reduction, not the
+    // expression, as would be if we wrote:
+    // reduced = sum.reduce("USD", bank);
+    Money reduced = bank.reduce(sum, "USD");
+    
+    expect(Money.dollar(10), reduced);
   });
 }
