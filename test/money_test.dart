@@ -4,6 +4,7 @@ import 'package:test/test.dart';
 void main() {
   test("franc != dollar", () {
     expect(false, Money.franc(10).equals(Money.dollar(10)));
+    expect(true, Money(10, "CHF").equals(Money.franc(10)));
   });
 
   test("currency", () {

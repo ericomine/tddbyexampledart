@@ -1,7 +1,7 @@
 import 'dollar.dart';
 import 'franc.dart';
 
-abstract class Money {
+class Money {
   final amount;
   final _currency;
   
@@ -12,9 +12,13 @@ abstract class Money {
   bool equals(Object obj) {
     var money = obj as Money;
     return money.amount == amount &&
-      this.runtimeType == obj.runtimeType;
+      money.currency == currency;
 
     // runtimeType replaces Java's getClass() method
+  }
+
+  Money times(int multiplier) {
+    return Money(amount * multiplier, currency);
   }
 
   static Money dollar(int amount) {
@@ -23,7 +27,5 @@ abstract class Money {
 
   static Money franc(int amount) {
     return Franc(amount, "CHF");
-  }
-
-  Money times(int multiplier);
+  } 
 }

@@ -1,13 +1,8 @@
 import 'money.dart';
 
 class Franc extends Money { 
-  final _currency;
   Franc(
     amount,
-    this._currency
-  ) : super(amount, _currency);  
-
-  Money times(int multiplier) {
-    return Money.franc(amount * multiplier);
-  }
+    currency
+  ) : super(amount, currency);  
 }
