@@ -9,4 +9,8 @@ class Sum implements Expression {
     this.augend,
     this.addend
   );
+
+  Money reduce(to) {
+    return Money(augend.amount + addend.amount, to);
+  }
 }

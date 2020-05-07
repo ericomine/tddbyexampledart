@@ -5,7 +5,6 @@ import 'package:tddbyexample_dart/sum.dart';
 class Bank {
   Money reduce(Expression source, String to) {
     Sum sum = source as Sum;
-    int amount = sum.addend.amount + sum.augend.amount;
-    return Money(amount, to);
+    return sum.reduce(to);
   }
 }
