@@ -1,3 +1,6 @@
+import 'dollar.dart';
+import 'franc.dart';
+
 abstract class Money {
   final amount;
   
@@ -9,6 +12,14 @@ abstract class Money {
       this.runtimeType == obj.runtimeType;
 
     // runtimeType replaces Java's getClass() method
+  }
+
+  static Money dollar(int amount) {
+    return Dollar(amount);
+  }
+
+  static Money franc(int amount) {
+    return Franc(amount);
   }
 
   Money times(int multiplier);

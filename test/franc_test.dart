@@ -1,13 +1,12 @@
+import 'package:tddbyexample_dart/money.dart';
 import 'package:test/test.dart';
-
-import '../lib/franc.dart';
 
 void main() {
   test('franc should multiply', () {
-    Franc five = Franc(5);
+    Money five = Money.franc(5);
     var product = five.times(2);
-    expect(true, Franc(10).equals(product));
+    expect(true, Money.franc(10).equals(product));
     product = five.times(3);
-    expect(true, Franc(15).equals(product));
+    expect(true, Money.franc(15).equals(product));
   });
 }
