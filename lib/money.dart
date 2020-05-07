@@ -1,4 +1,4 @@
-class Money {
+abstract class Money {
   final amount;
   
   Money(this.amount);
@@ -10,4 +10,6 @@ class Money {
 
     // runtimeType replaces Java's getClass() method
   }
+
+  Money times(int multiplier);
 }
