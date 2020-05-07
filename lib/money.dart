@@ -3,10 +3,11 @@ import 'franc.dart';
 
 abstract class Money {
   final amount;
+  final _currency;
   
-  Money(this.amount);
+  Money(this.amount, this._currency);
 
-  String get currency;
+  String get currency => _currency;
 
   bool equals(Object obj) {
     var money = obj as Money;

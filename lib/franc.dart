@@ -5,10 +5,7 @@ class Franc extends Money {
   Franc(
     amount,
     this._currency
-  ) : super(amount);
-  
-  @override
-  String get currency => _currency;
+  ) : super(amount, _currency);  
 
   Money times(int multiplier) {
     return Money.franc(amount * multiplier);
