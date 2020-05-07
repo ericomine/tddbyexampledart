@@ -11,6 +11,6 @@ class Dollar extends Money {
   String get currency => _currency;
 
   Money times(int multiplier) {
-    return Dollar(amount * multiplier, _currency);
+    return Money.dollar(amount * multiplier);
   }
 }

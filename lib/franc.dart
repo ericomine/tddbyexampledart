@@ -11,6 +11,6 @@ class Franc extends Money {
   String get currency => _currency;
 
   Money times(int multiplier) {
-    return Franc(amount * multiplier, _currency);
+    return Money.franc(amount * multiplier);
   }
 }
