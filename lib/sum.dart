@@ -1,8 +1,9 @@
 import 'package:tddbyexample_dart/expression.dart';
+import 'package:tddbyexample_dart/money.dart';
 
 class Sum implements Expression {
-  final augend;
-  final addend;
+  final Money augend;
+  final Money addend;
 
   Sum(
     this.augend,

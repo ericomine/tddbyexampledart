@@ -74,4 +74,13 @@ void main() {
     expect(five, equals(sum.augend));
     expect(five, equals(sum.addend));
   });
+
+  test("sum should reduce", () {
+    Expression sum = Sum(Money.dollar(3), Money.dollar(4));
+    Bank bank = Bank();
+
+    Money result = bank.reduce(sum, "USD");
+    expect(true, result.equals(Money.dollar(7)));
+  });
+
 }
