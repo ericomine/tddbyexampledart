@@ -11,6 +11,22 @@ class Bank {
     return source.reduce(this, to);
   }
 
+  num rate(String fromCurrency, String toCurrency) {
+    var key = Tuple2<String, String>(fromCurrency, toCurrency);
+    num result;
+    try {
+      result = rates[key];
+    } catch (exception) {
+      throw exception;
+    }
+    
+    if (result != null) {
+      return result;
+    } else { 
+      return null;
+    }
+  }
+
   void addRate(String fromCurrency, String toCurrency, num rate) {
     var key = Tuple2<String, String>(fromCurrency, toCurrency);
     rates[key] = rate;
