@@ -1,15 +1,13 @@
+import 'package:tddbyexample_dart/money.dart';
 import 'package:test/test.dart';
-
-import '../lib/dollar.dart';
-import '../lib/franc.dart';
 
 void main() {
   test("franc != dollar", () {
-    expect(false, Franc(10).equals(Dollar(10)));
+    expect(false, Money.franc(10).equals(Money.dollar(10)));
   });
 
   test("currency", () {
-    expect(Dollar(10).currency, equals("USD"));
-    expect(Franc(10).currency, equals("CHF"));
+    expect(Money.dollar(10).currency, equals("USD"));
+    expect(Money.franc(10).currency, equals("CHF"));
   });
 }

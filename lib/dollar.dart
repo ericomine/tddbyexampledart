@@ -1,13 +1,16 @@
 import 'money.dart';
 
 class Dollar extends Money {
-  Dollar(amount) : super(amount);  
-
-  final _currency = "USD";
+  final _currency;
+  Dollar(
+    amount,
+    this._currency
+  ) : super(amount);  
+  
   @override
   String get currency => _currency;
 
   Money times(int multiplier) {
-    return Dollar(amount * multiplier);
+    return Dollar(amount * multiplier, _currency);
   }
 }

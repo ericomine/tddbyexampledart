@@ -17,11 +17,11 @@ abstract class Money {
   }
 
   static Money dollar(int amount) {
-    return Dollar(amount);
+    return Dollar(amount, "USD");
   }
 
   static Money franc(int amount) {
-    return Franc(amount);
+    return Franc(amount, "CHF");
   }
 
   Money times(int multiplier);
