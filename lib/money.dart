@@ -18,6 +18,10 @@ class Money {
     return Money(amount * multiplier, currency);
   }
 
+  Money plus(Money addend) {
+    return Money(amount + addend.amount, currency);
+  }
+
   static Money dollar(int amount) {
     return Money(amount, "USD");
   }

@@ -12,6 +12,14 @@ void main() {
     expect(Money.franc(10).currency, equals("CHF"));
   });
 
+  test("dollar should add", () {
+    expect(true, 
+      Money.dollar(10)
+      .equals(Money.dollar(5)
+      .plus(Money.dollar(5)))
+      );
+  });
+
   test('dollar should multiply', () {
     Money five = Money.dollar(5);
     var product = five.times(2);
@@ -31,5 +39,13 @@ void main() {
     expect(true, Money.franc(10).equals(product));
     product = five.times(3);
     expect(true, Money.franc(15).equals(product));
+  });
+
+  test("franc should add", () {
+    expect(true, 
+      Money.franc(10)
+      .equals(Money.franc(5)
+      .plus(Money.franc(5)))
+      );
   });
 }
