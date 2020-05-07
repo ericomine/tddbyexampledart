@@ -1,5 +1,3 @@
-import 'dollar.dart';
-
 class Money {
   final amount;
   
@@ -7,6 +5,9 @@ class Money {
 
   bool equals(Object obj) {
     var money = obj as Money;
-    return money.amount == amount;
+    return money.amount == amount &&
+      this.runtimeType == obj.runtimeType;
+
+    // runtimeType replaces Java's getClass() method
   }
 }
