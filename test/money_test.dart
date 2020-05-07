@@ -16,11 +16,10 @@ void main() {
   });
 
   test("dollar should add", () {
-    expect(true, 
-      Money.dollar(10)
-      .equals(Money.dollar(5)
-      .plus(Money.dollar(5)))
-      );
+    Money five = Money.dollar(5);
+    Money result = five.plus(five).reduce();
+    
+    expect(true, result.equals(Money.dollar(10)));
   });
 
   test('dollar should multiply', () {
@@ -45,11 +44,10 @@ void main() {
   });
 
   test("franc should add", () {
-    expect(true, 
-      Money.franc(10)
-      .equals(Money.franc(5)
-      .plus(Money.franc(5)))
-      );
+    Money five = Money.franc(5);
+    Money result = five.plus(five).reduce();
+    
+    expect(true, result.equals(Money.franc(10)));
   });
 
   test("should add different currencies", () {
@@ -82,5 +80,4 @@ void main() {
     Money result = bank.reduce(sum, "USD");
     expect(true, result.equals(Money.dollar(7)));
   });
-
 }

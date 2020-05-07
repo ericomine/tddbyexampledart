@@ -10,7 +10,7 @@ class Sum implements Expression {
     this.addend
   );
 
-  Money reduce(to) {
-    return Money(augend.amount + addend.amount, to);
+  Money reduce([to]) {
+    return Money(augend.amount + addend.amount, to ?? augend.currency);
   }
 }
