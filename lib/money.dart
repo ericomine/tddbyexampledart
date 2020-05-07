@@ -1,7 +1,7 @@
 import 'package:tddbyexample_dart/expression.dart';
 import 'package:tddbyexample_dart/sum.dart';
 
-class Money {
+class Money extends Expression {
   final amount;
   final _currency;
   
@@ -17,11 +17,16 @@ class Money {
     // runtimeType replaces Java's getClass() method
   }
 
+  Money reduce(Bank bank, String to) {
+    
+    return this;
+  }  
+
   Money times(int multiplier) {
     return Money(amount * multiplier, currency);
   }
 
-  Sum plus(Money addend) {
+  Expression plus(Money addend) {
     return Sum(this, addend);
   }
 

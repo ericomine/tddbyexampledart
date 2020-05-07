@@ -17,8 +17,11 @@ void main() {
 
   test("dollar should add", () {
     Money five = Money.dollar(5);
-    Money result = five.plus(five).reduce();
+    Expression sum = five.plus(five);
     
+    Bank bank = new Bank();
+    Money result = bank.reduce(sum, "USD");
+
     expect(true, result.equals(Money.dollar(10)));
   });
 
@@ -45,8 +48,11 @@ void main() {
 
   test("franc should add", () {
     Money five = Money.franc(5);
-    Money result = five.plus(five).reduce();
+    Expression sum = five.plus(five);
     
+    Bank bank = new Bank();
+    Money result = bank.reduce(sum, "CHF");
+
     expect(true, result.equals(Money.franc(10)));
   });
 
@@ -79,5 +85,17 @@ void main() {
 
     Money result = bank.reduce(sum, "USD");
     expect(true, result.equals(Money.dollar(7)));
+  });
+
+  test("sum should accept dollar+franc", () {
+    Money aDollar = Money.dollar(1);
+    Money aFranc = Money.franc(1);
+    
+    Bank bank = Bank()
+      ..addRate("CHF", "USD", 2);
+
+    Expression expr = aDollar.plus(aFranc);
+    Money result = bank.reduce(expr, "USD");
+    expect(result, Money.dollar(3));
   });
 }
