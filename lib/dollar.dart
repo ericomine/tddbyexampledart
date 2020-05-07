@@ -1,11 +1,10 @@
 import 'money.dart';
 
 class Dollar extends Money {
-  final _amount;
-  Dollar(this._amount);
- 
+  Dollar(amount) : super(amount);  
+
   Dollar times(int multiplier) {
-    return Dollar(_amount * multiplier);
+    return Dollar(amount * multiplier);
   }
 
   bool equals(Object obj) {
