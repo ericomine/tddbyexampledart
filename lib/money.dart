@@ -6,6 +6,8 @@ abstract class Money {
   
   Money(this.amount);
 
+  String get currency;
+
   bool equals(Object obj) {
     var money = obj as Money;
     return money.amount == amount &&
