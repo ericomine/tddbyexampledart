@@ -1,4 +1,6 @@
-class Dollar {
+import 'money.dart';
+
+class Dollar extends Money {
   final _amount;
   Dollar(this._amount);
  
