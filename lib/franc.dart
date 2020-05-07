@@ -1,14 +1,9 @@
-class Franc {
-  final _amount;
-  Franc(this._amount);
+import 'money.dart';
+
+class Franc extends Money { 
+  Franc(amount) : super(amount);
  
   Franc times(int multiplier) {
-    return Franc(_amount * multiplier);
+    return Franc(amount * multiplier);
   }
-
-  bool equals(Object obj) {
-    var dollar = obj as Franc;
-    return dollar._amount == _amount;
-  }
-
 }

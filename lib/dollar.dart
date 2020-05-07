@@ -6,10 +6,4 @@ class Dollar extends Money {
   Dollar times(int multiplier) {
     return Dollar(amount * multiplier);
   }
-
-  bool equals(Object obj) {
-    var dollar = obj as Dollar;
-    return dollar.amount == amount;
-  }
-
 }
