@@ -9,7 +9,7 @@ class Dollar extends Money {
 
   bool equals(Object obj) {
     var dollar = obj as Dollar;
-    return dollar._amount == _amount;
+    return dollar.amount == amount;
   }
 
 }
