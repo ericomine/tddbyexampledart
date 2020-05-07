@@ -1,6 +1,3 @@
-import 'dollar.dart';
-import 'franc.dart';
-
 class Money {
   final amount;
   final _currency;
