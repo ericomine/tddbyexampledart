@@ -12,6 +12,10 @@ class Bank {
   }
 
   num rate(String fromCurrency, String toCurrency) {
+    if (fromCurrency == toCurrency) {
+      return 1;
+    }
+
     var key = Tuple2<String, String>(fromCurrency, toCurrency);
     num result;
     try {

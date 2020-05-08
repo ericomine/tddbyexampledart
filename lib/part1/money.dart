@@ -3,8 +3,8 @@ import './expression.dart';
 import './sum.dart';
 
 class Money extends Expression {
-  final amount;
-  final _currency;
+  final num amount;
+  final String _currency;
   
   Money(this.amount, this._currency);
 
@@ -31,11 +31,11 @@ class Money extends Expression {
     return Sum(this, addend);
   }
 
-  static Money dollar(int amount) {
+  static Money dollar(num amount) {
     return Money(amount, "USD");
   }
 
-  static Money franc(int amount) {
+  static Money franc(num amount) {
     return Money(amount, "CHF");
   } 
 }
