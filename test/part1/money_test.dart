@@ -1,7 +1,7 @@
-import 'package:tddbyexample_dart/bank.dart';
-import 'package:tddbyexample_dart/expression.dart';
-import 'package:tddbyexample_dart/money.dart';
-import 'package:tddbyexample_dart/sum.dart';
+import 'package:tddbyexample_dart/part1/bank.dart';
+import 'package:tddbyexample_dart/part1/expression.dart';
+import 'package:tddbyexample_dart/part1/money.dart';
+import 'package:tddbyexample_dart/part1/sum.dart';
 import 'package:test/test.dart';
 
 void main() {

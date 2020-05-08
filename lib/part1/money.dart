@@ -1,6 +1,6 @@
-import 'package:tddbyexample_dart/bank.dart';
-import 'package:tddbyexample_dart/expression.dart';
-import 'package:tddbyexample_dart/sum.dart';
+import './bank.dart';
+import './expression.dart';
+import './sum.dart';
 
 class Money extends Expression {
   final amount;

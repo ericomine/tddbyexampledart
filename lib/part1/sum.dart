@@ -1,5 +1,5 @@
-import 'package:tddbyexample_dart/expression.dart';
-import 'package:tddbyexample_dart/money.dart';
+import './expression.dart';
+import './money.dart';
 
 class Sum implements Expression {
   final Money augend;

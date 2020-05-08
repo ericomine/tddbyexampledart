@@ -1,7 +1,7 @@
 import 'dart:collection';
 
-import 'package:tddbyexample_dart/expression.dart';
-import 'package:tddbyexample_dart/money.dart';
+import './expression.dart';
+import './money.dart';
 import 'package:tuple/tuple.dart';
 
 class Bank {
