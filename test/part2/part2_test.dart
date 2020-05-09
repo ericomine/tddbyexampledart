@@ -4,10 +4,11 @@ import 'package:test/test.dart';
 void main() {
   test('Invoke test()', () {
     var myTest = WasRun("testMethod");
-    print(myTest.wasrun);
+    print(myTest.wasRun);
+    expect(false, myTest.wasRun);
     myTest.testMethod();
-    print(myTest.wasrun);
-
+    print(myTest.wasRun);
+    expect(true, myTest.wasRun);
   });
   test('Invoke setUp() first', () {});
   test('Invoke tearDown() later', () {});
