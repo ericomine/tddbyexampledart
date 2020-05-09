@@ -1,5 +1,8 @@
+import 'dart:mirrors';
+
 class WasRun {
-  WasRun(String s);
+  String methodToTest;
+  WasRun(this.methodToTest);
 
   bool _wasRun = false;
   bool get wasRun => _wasRun;
@@ -7,5 +10,10 @@ class WasRun {
   void testMethod() {
     _wasRun = true;
   }
-  
+
+  void run() {
+    var mirror = reflect(this);
+    mirror.invoke(Symbol(methodToTest), []);
+  }
+
 }

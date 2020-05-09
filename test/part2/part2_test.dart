@@ -6,7 +6,7 @@ void main() {
     var myTest = WasRun("testMethod");
     print(myTest.wasRun);
     expect(false, myTest.wasRun);
-    myTest.testMethod();
+    myTest.run();
     print(myTest.wasRun);
     expect(true, myTest.wasRun);
   });
