@@ -1,14 +1,9 @@
-import 'package:tddbyexample_dart/part2/wasrun.dart';
+import 'package:tddbyexample_dart/part2/TestCaseTest.dart';
 import 'package:test/test.dart';
 
 void main() {
   test('Invoke test()', () {
-    var myTest = WasRun("testMethod");
-    print(myTest.wasRun);
-    expect(false, myTest.wasRun);
-    myTest.run();
-    print(myTest.wasRun);
-    expect(true, myTest.wasRun);
+    expect(true, TestCaseTest().run());
   });
   test('Invoke setUp() first', () {});
   test('Invoke tearDown() later', () {});

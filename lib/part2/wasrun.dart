@@ -1,19 +1,17 @@
-import 'dart:mirrors';
+import 'testcase.dart';
 
 class WasRun {
-  String methodToTest;
-  WasRun(this.methodToTest);
-
   bool _wasRun = false;
   bool get wasRun => _wasRun;
+
+  String _name;
+  WasRun(this._name);
+
+  void run() {
+    TestCase(_name, this).run();
+  }
 
   void testMethod() {
     _wasRun = true;
   }
-
-  void run() {
-    var mirror = reflect(this);
-    mirror.invoke(Symbol(methodToTest), []);
-  }
-
 }
