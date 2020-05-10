@@ -4,13 +4,22 @@ import 'testcase.dart';
 class TestCaseTest extends TestCase {
   TestCaseTest(name) : super(name);
 
+  WasRun myTest;
+
+  void setup() {
+    myTest = WasRun(name);
+  }
+
   void testRunning() {
-    var myTest = WasRun(name);
-    assert(!myTest.wasRun);
     myTest.run();
     assert(myTest.wasRun);
   }
   
+  void testSetup() {
+    myTest.run();
+    assert(myTest.wasSetup);
+  }
+
   bool run() {
     try {
       testRunning();
