@@ -2,11 +2,10 @@ import 'dart:mirrors';
 
 class TestCase {
   String name;
-  Object instance;
-  TestCase(this.name, this.instance);
+  TestCase(this.name);
 
   void run() {
-    var mirror = reflect(instance);
+    var mirror = reflect(this);
     mirror.invoke(Symbol(name), []);
   }
 }

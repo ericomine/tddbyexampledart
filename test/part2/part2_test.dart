@@ -3,7 +3,8 @@ import 'package:test/test.dart';
 
 void main() {
   test('Invoke test()', () {
-    expect(true, TestCaseTest().run());
+    var myTest = TestCaseTest("testMethod");
+    expect(true, myTest.run());
   });
   test('Invoke setUp() first', () {});
   test('Invoke tearDown() later', () {});

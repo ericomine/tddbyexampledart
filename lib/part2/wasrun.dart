@@ -1,15 +1,10 @@
 import 'testcase.dart';
 
-class WasRun {
+class WasRun extends TestCase {
   bool _wasRun = false;
   bool get wasRun => _wasRun;
 
-  String _name;
-  WasRun(this._name);
-
-  void run() {
-    TestCase(_name, this).run();
-  }
+  WasRun(_name) : super(_name);
 
   void testMethod() {
     _wasRun = true;

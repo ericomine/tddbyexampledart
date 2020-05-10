@@ -1,16 +1,19 @@
 import 'wasrun.dart';
+import 'testcase.dart';
 
-class TestCaseTest {
-  TestCaseTest() {
-    var myTest = WasRun("testMethod");
+class TestCaseTest extends TestCase {
+  TestCaseTest(name) : super(name);
+
+  void testRunning() {
+    var myTest = WasRun(name);
     assert(!myTest.wasRun);
     myTest.run();
-    assert(true, myTest.wasRun);
+    assert(myTest.wasRun);
   }
-
+  
   bool run() {
     try {
-      TestCaseTest();
+      testRunning();
     } catch (ex) {
       return false;
     } finally {
