@@ -7,10 +7,14 @@ class WasRun extends TestCase {
   bool _wasSetup = false;
   bool get wasSetup => _wasSetup;
 
+  String _log = "";
+  bool get log => _log;
+
   WasRun(_name) : super(_name);
 
   void setup() {
     _wasSetup = true;
+    _log = "setup";
   }  
 
   void testMethod() {
